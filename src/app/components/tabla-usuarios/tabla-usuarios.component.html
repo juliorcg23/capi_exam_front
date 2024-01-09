@@ -1,0 +1,20 @@
+<table *ngIf="!loading">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha de nacimiento</th>
+      <th>Edad</th>
+      <th>Dirección</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.fecha_nacimiento }}</td>
+      <td>{{ user.edad }}</td>
+      <td>{{ user.domicilio?.getFullDomicilio() }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 *ngIf="loading">Cargando...</h2>
